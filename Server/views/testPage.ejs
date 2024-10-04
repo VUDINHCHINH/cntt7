@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Pagination Example</title>
+</head>
+<body>
+  <h1>Pagination Example</h1>
+  <ul>
+    <% items.forEach(item => { %>
+      <li><%= item %></li>
+    <% }) %>
+  </ul>
+  <div>
+    <% if (currentPage > 1) { %>
+      <a href="/index/testPage/?page=<%= currentPage - 1 %>">Previous</a>
+    <% } %>
+    <% pages.forEach(page => { %>
+      <a href="/index/testPage/?page=<%= page %>" style="<%= page === currentPage ? 'font-weight: bold;' : '' %>"><%= page %></a>
+    <% }) %>
+    <% if (currentPage < totalPages) { %>
+      <a href="/index/testPage/?page=<%= currentPage + 1 %>">Next</a>
+    <% } %>
+  </div>
+</body>
+</html>

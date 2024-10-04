@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title><%= title %></title>
+    <link rel='stylesheet' href='/stylesheets/style.css' />
+    <link rel="shortcut icon" href="/images/house-door.svg" type="image/x-icon">
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha3/dist/js/bootstrap.bundle.min.js" integrity="sha384-ENjdO4Dr2bkBIFxQpeoTz1HIcje39Wm4jDKdf19U8gI4ddQ3GYNS7NTKfAdVQSZe" crossorigin="anonymous"></script>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-KK94CHFLLe+nY2dmCWGMq91rCGa5gtU4mk92HdvYe+M/SXH301p5ILy+dN9+nJOZ" crossorigin="anonymous">
+</head>
+<body>
+    <%- include('../../inc/top.ejs')%>
+    <div class="container">
+        <nav class="">
+            <form class="form-inline" action="/comics/search" method="GET">
+                <input class="form-control mr-sm-2" type="search" placeholder="Search" aria-label="Search" name="keyword">
+            </form>
+        </nav>
+        <h1 class="mt-4 mb-4">Danh sách tìm kiếm: <%= keyword %> - Trang: <%=currentPage%></h1>
+        <div class="row">
+            <% if (comics && comics.length > 0) { %>
+                <% comics.forEach(function(comic) { %>
+                    <div class="col-md-3 ">
+                        <a href="http://localhost:3000/comics/detailcomics/<%= comic.slug %>" class="text-decoration-none">
+                        <div class="card mb-4 shadow-sm bg-dark-subtle">
+                            <img src="https://img.otruyenapi.com/uploads/comics/<%= comic.thumb_url %>" class="card-img-top img-thumbnail" style="max-height: 400px;" alt="<%= comic.name %>">
+                            <div class="card-body" style="min-height: 110px;">
+                                <h5 class="card-title text-center fw-bold font-monospace"><%= comic.name %></h5>
+                            </div>
+                        </div>
+                    </a>
+                    </div>
+                <% }); %>
+            <% } else { %>
+                <p>Không có dữ liệu truyện tranh để hiển thị.</p>
+            <% } %>
+            <div >
+                <% if (currentPage > 1) { %>
+                  <a class="btn btn-warning" href="/comics/search?keyword=<%=keyword%>&page=<%= currentPage - 1 %>">Previous</a>
+                <% } %>
+                <% pages.forEach(page => { %>
+                  <a class="btn btn-warning" href="/comics/search?keyword=<%=keyword%>&page=<%= page %>" style="<%= page === currentPage ? 'font-weight: bold;' : '' %>"><%= page %></a>
+                <% }) %>
+                <% if (currentPage < totalPages) { %>
+                  <a class="btn btn-warning" href="/comics/search?keyword=<%=keyword%>&page=<%= currentPage + 1 %>">Next</a>
+                <% } %>
+              </div>
+        </div>
+    </div>
+</body>
+</html>

@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Read Comics</title>
+  <link rel="shortcut icon" href="/images/book.svg" type="image/x-icon">
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha3/dist/js/bootstrap.bundle.min.js" integrity="sha384-ENjdO4Dr2bkBIFxQpeoTz1HIcje39Wm4jDKdf19U8gI4ddQ3GYNS7NTKfAdVQSZe" crossorigin="anonymous"></script>
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-KK94CHFLLe+nY2dmCWGMq91rCGa5gtU4mk92HdvYe+M/SXH301p5ILy+dN9+nJOZ" crossorigin="anonymous">
+
+  <script src="/javascripts/checkReading.js"></script>
+  <link rel='stylesheet' href='/stylesheets/stylereadcomic.css' />
+</head>
+
+<body class="bg-dark-subtle">
+    <%- include('../../inc/top.ejs')%>
+
+  <div class="container ">
+    <h1 class="mt-4 mb-4 text-center fw-bold text-danger">
+        <%= data.item.comic_name %>
+    </h1>
+    <p class="mt-4 mb-4 fs-3 fw-bold text-center text-uppercase">Chapter <%= data.item.chapter_name %></p>
+    <div class="position-relative d-flex flex-column align-items-center">
+        <% if (data && data.item && data.item.chapter_image && data.item.chapter_image.length > 0) { %>
+            <% data.item.chapter_image.forEach(function(image) { %>
+                <div class="col-md-8">
+                    <div class="card mb-4 shadow-sm">
+                        <img src="<%= data.domain_cdn %>/<%= data.item.chapter_path %>/<%= image.image_file %>"
+                            class="card-img-top" alt="Image <%= image.image_page %>">
+                    </div>
+                </div>
+            <% }); %>
+        <% } else { %>
+            <p>Không có hình ảnh để hiển thị.</p>
+        <% } %>
+    </div>
+</div>
+
+
+
+  <button id="button" class="btn btn-primary " disabled>30</button>
+  <div id="rewardMessage" style="display: none;">Bạn đã nhận phần thưởng!</div>
+
+
+</body>
+
+</html>

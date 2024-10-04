@@ -1,0 +1,15 @@
+.image-preview {
+    margin-top: 10px;
+  }
+  .image-preview {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100%;
+}
+#imagePreview {
+    max-width: 350px;
+    max-height: 300px;
+    width: auto; 
+    height: auto;
+}
