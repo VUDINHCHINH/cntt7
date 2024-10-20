@@ -53,7 +53,7 @@ app.use('/comics', comicRouter);
 app.use('/nft', nftRoutes);
 app.use('/admin', adminRoutes);
 app.use("/auth", AuthRounter);
-
+app.use("/", indexRouter); // Định nghĩa route cho '/'
 
 websocketServices;
 
@@ -88,3 +88,8 @@ else {
 });
 
 module.exports = app;
+
+const PORT = process.env.PORT || 3000; // Đặt cổng mặc định là 3000
+app.listen(PORT, () => {
+    console.log(`Server is running on http://localhost:${PORT}`);
+});
