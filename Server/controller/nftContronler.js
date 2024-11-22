@@ -93,7 +93,7 @@ exports.createUniqueAsset = async (req, res) => {
     headers: {
       accept: "application/json",
       "x-api-key":
-        "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJrZXkiOiI0NzU5ZWMzZi0xNGJjLTQwZmEtYjVlYi0wNDQyMDNjZmYxMGIiLCJzdWIiOiJjYzc3OWRjNC1jOTIyLTRkZWItYjRiOC0zY2RjZjE3MTNkNDEiLCJpYXQiOjE3MjE3NDk1MDh9.jSIdFMx4CVJC2cW2rUCLqhO4cwq6On1uS6mUX7NdSzA",
+       'eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJrZXkiOiJmNjM0Y2M3Yy1jM2JhLTRhYzAtOTZiMy01NjU2MGY3YmU2MjUiLCJzdWIiOiJiZDJmOTJhOC0xNmEyLTQxZDAtODUzMi02NjJmNjIzNjYxNzQiLCJpYXQiOjE3MzIxNzcwMjN9.IqOWqZmho1uTa3pdyFjenx2Nene6D1idSTF5UDNbycc',
       "content-type": "application/json",
     },
     data: {
@@ -119,7 +119,7 @@ exports.createUniqueAsset = async (req, res) => {
 let storedItemIds = [];
 exports.fetchAndStoreItemIds = async (req, res) => {
   const { collectionId } = req.params;
-  const PK = "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJrZXkiOiI0NzU5ZWMzZi0xNGJjLTQwZmEtYjVlYi0wNDQyMDNjZmYxMGIiLCJzdWIiOiJjYzc3OWRjNC1jOTIyLTRkZWItYjRiOC0zY2RjZjE3MTNkNDEiLCJpYXQiOjE3MjE3NDk1MDh9.jSIdFMx4CVJC2cW2rUCLqhO4cwq6On1uS6mUX7NdSzA";
+  const PK = "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJrZXkiOiJmNjM0Y2M3Yy1jM2JhLTRhYzAtOTZiMy01NjU2MGY3YmU2MjUiLCJzdWIiOiJiZDJmOTJhOC0xNmEyLTQxZDAtODUzMi02NjJmNjIzNjYxNzQiLCJpYXQiOjE3MzIxNzcwMjN9.IqOWqZmho1uTa3pdyFjenx2Nene6D1idSTF5UDNbycc";
   const apiUrl = `https://api.gameshift.dev/nx/asset-collections/${collectionId}/assets`;
 
   try {
@@ -141,7 +141,7 @@ exports.fetchAndStoreItemIds = async (req, res) => {
 
 
 
-const apiKey = 'eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJrZXkiOiI0NzU5ZWMzZi0xNGJjLTQwZmEtYjVlYi0wNDQyMDNjZmYxMGIiLCJzdWIiOiJjYzc3OWRjNC1jOTIyLTRkZWItYjRiOC0zY2RjZjE3MTNkNDEiLCJpYXQiOjE3MjE3NDk1MDh9.jSIdFMx4CVJC2cW2rUCLqhO4cwq6On1uS6mUX7NdSzA';
+const apiKey = 'eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJrZXkiOiJmNjM0Y2M3Yy1jM2JhLTRhYzAtOTZiMy01NjU2MGY3YmU2MjUiLCJzdWIiOiJiZDJmOTJhOC0xNmEyLTQxZDAtODUzMi02NjJmNjIzNjYxNzQiLCJpYXQiOjE3MzIxNzcwMjN9.IqOWqZmho1uTa3pdyFjenx2Nene6D1idSTF5UDNbycc';
 exports.getItemNFT = async (req, res, next) => {
   try {
     const referenceId = 1;
@@ -182,7 +182,7 @@ exports.handleItemTransfer = async (req, res) => {
     }
 
     const reference = 1; 
-    const collectionId = "451f9c28-b41a-4f76-86c5-5b2a24729385";
+    const collectionId = "e6324811-ca8c-44e0-a5d9-ef3271c697ef";
 
     try {
       const response = await axios.get(`https://api.gameshift.dev/nx/users/${reference}/items?page=1&perPage=6&collectionId=${collectionId}`, {
