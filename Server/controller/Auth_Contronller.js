@@ -1,6 +1,6 @@
 var Model = require("../models/Model");
 const axios = require('axios');
-const apiKey = 'eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJrZXkiOiI0NzU5ZWMzZi0xNGJjLTQwZmEtYjVlYi0wNDQyMDNjZmYxMGIiLCJzdWIiOiJjYzc3OWRjNC1jOTIyLTRkZWItYjRiOC0zY2RjZjE3MTNkNDEiLCJpYXQiOjE3MjE3NDk1MDh9.jSIdFMx4CVJC2cW2rUCLqhO4cwq6On1uS6mUX7NdSzA';
+const apiKey = "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJrZXkiOiJmYjk1ZmMxOS00ZDcyLTQwZmItODQzMy1jYjc5NzUxODk5YzIiLCJzdWIiOiIyZmM2NWRkOC0yNzBkLTQ5YzktYTI2Ny0yZGRiNDBmNDlhODciLCJpYXQiOjE3MzIyNjA3Mzl9.jSIdFMx4CVJC2cW2rUCLqhO4cwq6On1uS6mUX7NdSzA";
 
 
 exports.Register = async (req, res, next) => {

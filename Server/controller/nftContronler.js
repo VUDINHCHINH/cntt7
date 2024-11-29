@@ -2,15 +2,15 @@ const axios = require("axios");
 
 exports.createNFT = async (req, res) => {
   const PK =
-    "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJrZXkiOiI0NzU5ZWMzZi0xNGJjLTQwZmEtYjVlYi0wNDQyMDNjZmYxMGIiLCJzdWIiOiJjYzc3OWRjNC1jOTIyLTRkZWItYjRiOC0zY2RjZjE3MTNkNDEiLCJpYXQiOjE3MjE3NDk1MDh9.jSIdFMx4CVJC2cW2rUCLqhO4cwq6On1uS6mUX7NdSzA";
+    "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJrZXkiOiI1MDAxN2ViMC01NWNmLTQzZTItODA4Yy03NTBjN2Q0NjRjZDAiLCJzdWIiOiIzODZmMDcxOS04YzE1LTQ5YzctYTk5Zi01MzFjNmJhNDUxMzkiLCJpYXQiOjE3MzIyNjU1Njh9.zS11U7BBCTjF0QA2lcF07LKdhDeEkn9Bvt3ra0WHgMM";
 
-  //   if (req.method === "GET") {
-  //     return res.render("NFT/create_NFT", { error: null });
-  //   }
-  // if (!PK) {
-  //     console.error('PK is not defined');
-  //     return res.status(500).send('Internal server error: PK is not defined');
-  // }
+    if (req.method === "GET") {
+      return res.render("NFT/create_NFT", { error: null });
+    }
+  if (!PK) {
+      console.error('PK is not defined');
+      return res.status(500).send('Internal server error: PK is not defined');
+  }
 
   const { collectionId, description, imageUrl, name, attributes } = req.body;
   if (!collectionId || !description || !imageUrl || !name || !attributes) {
@@ -93,7 +93,7 @@ exports.createUniqueAsset = async (req, res) => {
     headers: {
       accept: "application/json",
       "x-api-key":
-       'eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJrZXkiOiJmNjM0Y2M3Yy1jM2JhLTRhYzAtOTZiMy01NjU2MGY3YmU2MjUiLCJzdWIiOiJiZDJmOTJhOC0xNmEyLTQxZDAtODUzMi02NjJmNjIzNjYxNzQiLCJpYXQiOjE3MzIxNzcwMjN9.IqOWqZmho1uTa3pdyFjenx2Nene6D1idSTF5UDNbycc',
+        "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJrZXkiOiI1MDAxN2ViMC01NWNmLTQzZTItODA4Yy03NTBjN2Q0NjRjZDAiLCJzdWIiOiIzODZmMDcxOS04YzE1LTQ5YzctYTk5Zi01MzFjNmJhNDUxMzkiLCJpYXQiOjE3MzIyNjU1Njh9.zS11U7BBCTjF0QA2lcF07LKdhDeEkn9Bvt3ra0WHgMM",
       "content-type": "application/json",
     },
     data: {
@@ -119,7 +119,7 @@ exports.createUniqueAsset = async (req, res) => {
 let storedItemIds = [];
 exports.fetchAndStoreItemIds = async (req, res) => {
   const { collectionId } = req.params;
-  const PK = "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJrZXkiOiJmNjM0Y2M3Yy1jM2JhLTRhYzAtOTZiMy01NjU2MGY3YmU2MjUiLCJzdWIiOiJiZDJmOTJhOC0xNmEyLTQxZDAtODUzMi02NjJmNjIzNjYxNzQiLCJpYXQiOjE3MzIxNzcwMjN9.IqOWqZmho1uTa3pdyFjenx2Nene6D1idSTF5UDNbycc";
+  const PK = "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJrZXkiOiI1MDAxN2ViMC01NWNmLTQzZTItODA4Yy03NTBjN2Q0NjRjZDAiLCJzdWIiOiIzODZmMDcxOS04YzE1LTQ5YzctYTk5Zi01MzFjNmJhNDUxMzkiLCJpYXQiOjE3MzIyNjU1Njh9.zS11U7BBCTjF0QA2lcF07LKdhDeEkn9Bvt3ra0WHgMM";
   const apiUrl = `https://api.gameshift.dev/nx/asset-collections/${collectionId}/assets`;
 
   try {
@@ -141,11 +141,11 @@ exports.fetchAndStoreItemIds = async (req, res) => {
 
 
 
-const apiKey = 'eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJrZXkiOiJmNjM0Y2M3Yy1jM2JhLTRhYzAtOTZiMy01NjU2MGY3YmU2MjUiLCJzdWIiOiJiZDJmOTJhOC0xNmEyLTQxZDAtODUzMi02NjJmNjIzNjYxNzQiLCJpYXQiOjE3MzIxNzcwMjN9.IqOWqZmho1uTa3pdyFjenx2Nene6D1idSTF5UDNbycc';
+const apiKey = 'eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJrZXkiOiI1MDAxN2ViMC01NWNmLTQzZTItODA4Yy03NTBjN2Q0NjRjZDAiLCJzdWIiOiIzODZmMDcxOS04YzE1LTQ5YzctYTk5Zi01MzFjNmJhNDUxMzkiLCJpYXQiOjE3MzIyNjU1Njh9.zS11U7BBCTjF0QA2lcF07LKdhDeEkn9Bvt3ra0WHgMM';
 exports.getItemNFT = async (req, res, next) => {
   try {
     const referenceId = 1;
-    const collectionId="451f9c28-b41a-4f76-86c5-5b2a24729385";
+    const collectionId="0d32ac27-6ba6-4739-ac4f-156817929dc3";
     try {
       const response = await axios.get(`https://api.gameshift.dev/nx/users/${referenceId}/items?page=1&perPage=6&collectionId=${collectionId}`, {
         headers: {
@@ -182,7 +182,7 @@ exports.handleItemTransfer = async (req, res) => {
     }
 
     const reference = 1; 
-    const collectionId = "e6324811-ca8c-44e0-a5d9-ef3271c697ef";
+    const collectionId = "0d32ac27-6ba6-4739-ac4f-156817929dc3";
 
     try {
       const response = await axios.get(`https://api.gameshift.dev/nx/users/${reference}/items?page=1&perPage=6&collectionId=${collectionId}`, {
@@ -222,7 +222,7 @@ exports.handleItemTransfer = async (req, res) => {
       },
   
     };
-    console.log(referenceId,id_item);
+   
     try {
       const transferResponse = await axios(options);
       const { transactionId, consentUrl } = transferResponse.data;
@@ -257,6 +257,9 @@ exports.handleItemTransfer = async (req, res) => {
   }
 };
 
+
+
+
 const Model = require('../models/Model');
 async function updateNFTCounts() {
   try {
@@ -264,7 +267,7 @@ async function updateNFTCounts() {
     for (const user of users) {
       try {
         const { idShift } = user;
-        const collectionId = "451f9c28-b41a-4f76-86c5-5b2a24729385";
+        const collectionId = "0d32ac27-6ba6-4739-ac4f-156817929dc3";
         const response = await axios.get(`https://api.gameshift.dev/nx/users/${idShift}/items?page=1&perPage=100&collectionId=${collectionId}`, {
           headers: {
             'accept': 'application/json',

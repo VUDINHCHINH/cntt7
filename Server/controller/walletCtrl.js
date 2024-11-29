@@ -1,7 +1,7 @@
 const walletModel = require('../models/walletModels');
 const axios = require("axios");
 
-const apiKey = 'eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJrZXkiOiI0NzU5ZWMzZi0xNGJjLTQwZmEtYjVlYi0wNDQyMDNjZmYxMGIiLCJzdWIiOiJjYzc3OWRjNC1jOTIyLTRkZWItYjRiOC0zY2RjZjE3MTNkNDEiLCJpYXQiOjE3MjE3NDk1MDh9.jSIdFMx4CVJC2cW2rUCLqhO4cwq6On1uS6mUX7NdSzA';
+const apiKey = 'eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJrZXkiOiI1MDAxN2ViMC01NWNmLTQzZTItODA4Yy03NTBjN2Q0NjRjZDAiLCJzdWIiOiIzODZmMDcxOS04YzE1LTQ5YzctYTk5Zi01MzFjNmJhNDUxMzkiLCJpYXQiOjE3MzIyNjU1Njh9.zS11U7BBCTjF0QA2lcF07LKdhDeEkn9Bvt3ra0WHgMM';
 
 exports.getUserItems = async (req, res, next) => {
   let msg = "";
@@ -62,7 +62,7 @@ async function updateNFTCounts() {
     for (const user of users) {
       try {
         const { idShift } = user;
-        const collectionId = "451f9c28-b41a-4f76-86c5-5b2a24729385";
+        const collectionId = "fb82d2f9-469e-43dc-a254-5a769e68b18f";
         const response = await axios.get(`https://api.gameshift.dev/nx/users/${idShift}/items?page=1&perPage=100&collectionId=${collectionId}`, {
           headers: {
             'accept': 'application/json',
