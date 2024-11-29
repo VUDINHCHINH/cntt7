@@ -90,7 +90,7 @@
 // });
 document.addEventListener("DOMContentLoaded", () => {
   let button = document.getElementById("button");
-  let timeLeft = 5;
+  let timeLeft = 1;
   let countdownTimer;
   let scrollTimeout;
   let userHasScrolled = true;
