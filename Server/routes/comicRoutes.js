@@ -32,5 +32,10 @@ router.get(
     requireAdmin,
     comicController.getDetailComics
 );
+// Route để gửi đánh giá truyện (POST)
+router.post('/submitReview', requireAdmin, comicController.submitReview);
 
+// Route thêm vào danh sách yêu thích (POST)
+router.post('/addToFavorites', requireAdmin, comicController.addToFavorites);
+router.get('/stats', requireAdmin, comicController.getStats);
 module.exports = router;

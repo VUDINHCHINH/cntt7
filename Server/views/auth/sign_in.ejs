@@ -11,45 +11,128 @@
     integrity="sha384-C6RzsynM9kWDrMNeT87bh95OGNyZPhcTNXj1NW7RuBCsyN/o0jlpcV8Qyq46cDfL"
     crossorigin="anonymous"></script>
   <style>
+    body {
+      background-color: #f7f7f7;
+      font-family: 'Arial', sans-serif;
+    }
+
     .card {
       border: none;
-      padding-top: 20%;
+      border-radius: 12px;
+      box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+      padding-top: 20px;
+    }
+
+    .card-header {
+      background-color: transparent;
+      border-bottom: none;
+      text-align: center;
+    }
+
+    .card-body {
+      padding: 2rem;
+    }
+
+    h3 {
+      font-weight: 700;
+      color: #343a40;
+    }
+
+    .form-label {
+      font-weight: 600;
+      color: #495057;
     }
 
     .btn-google {
       background-color: #dd4b39;
       color: white;
+      font-weight: 600;
     }
 
     .btn-google:hover {
       background-color: #ca4334;
       color: white;
     }
+
+    .btn {
+      transition: background-color 0.3s, transform 0.3s;
+    }
+
+    .btn:hover {
+      transform: translateY(-2px);
+    }
+
+    .alert {
+      font-size: 0.9rem;
+      border-radius: 8px;
+    }
+
+    .alert-danger {
+      background-color: #f8d7da;
+      color: #721c24;
+    }
+
+    .alert svg {
+      margin-right: 8px;
+    }
+
+    .float-end {
+      margin-top: 5px;
+    }
+
+    .text-center a {
+      text-decoration: none;
+      color: #007bff;
+    }
+
+    .text-center a:hover {
+      text-decoration: underline;
+    }
+
+    .form-check-label {
+      color: #495057;
+    }
+
+    .text-secondary {
+      color: #6c757d !important;
+    }
+
+    .btn-outline-dark {
+      border-color: #6c757d;
+      color: #6c757d;
+    }
+
+    .btn-outline-dark:hover {
+      background-color: #6c757d;
+      color: white;
+    }
   </style>
 </head>
 
 <body>
-  <div class="container">
+  <div class="container py-5">
     <div class="row justify-content-center">
       <div class="col-md-4">
-        <div class="card mt-4">
-          <h3 class="text-secondary fs-2 fw-bold">Sign In</h3>
+        <div class="card">
+          <div class="card-header">
+            <h3 class="text-secondary fs-2 fw-bold">Sign In</h3>
+          </div>
 
           <% if (msg) { %>
-            <div class="alert alert-danger d-flex align-items-center justify-content-between" role="alert">
-              <svg xmlns="http://www.w3.org/2000/svg" class="bi bi-exclamation-triangle-fill flex-shrink-0 me-2"
-                  width="24" height="24" viewBox="0 0 16 16" role="img" aria-label="Warning:">
-                  <path
-                      d="M8.982 1.566a1.13 1.13 0 0 0-1.96 0L.165 13.233c-.457.778.091 1.767.98 1.767h13.713c.889 0 1.438-.99.98-1.767L8.982 1.566zM8 5c.535 0 .954.462.9.995l-.35 3.507a.552.552 0 0 1-1.1 0L7.1 5.995A.905.905 0 0 1 8 5zm.002 6a1 1 0 1 1 0 2 1 1 0 0 1 0-2z" />
-              </svg>
-              <div>
-                  <%= msg %>
-              </div>
-              <div>
-                  <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
-              </div>
+          <div class="alert alert-danger d-flex align-items-center justify-content-between" role="alert">
+            <svg xmlns="http://www.w3.org/2000/svg" class="bi bi-exclamation-triangle-fill flex-shrink-0 me-2"
+                width="24" height="24" viewBox="0 0 16 16" role="img" aria-label="Warning:">
+                <path
+                    d="M8.982 1.566a1.13 1.13 0 0 0-1.96 0L.165 13.233c-.457.778.091 1.767.98 1.767h13.713c.889 0 1.438-.99.98-1.767L8.982 1.566zM8 5c.535 0 .954.462.9.995l-.35 3.507a.552.552 0 0 1-1.1 0L7.1 5.995A.905.905 0 0 1 8 5zm.002 6a1 1 0 1 1 0 2 1 1 0 0 1 0-2z" />
+            </svg>
+            <div>
+                <%= msg %>
+            </div>
+            <div>
+                <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
+            </div>
           </div>
-        <% } %>
+          <% } %>
 
           <div class="card-body">
             <form method="POST">
@@ -62,7 +145,7 @@
                 <input type="password" class="form-control" name="namePassword" placeholder="@#*%" required>
               </div>
               <div class="mb-3 form-check">
-                <input type="checkbox" class="form-check-input" id="remember-me" required>
+                <input type="checkbox" class="form-check-input" id="remember-me">
                 <label class="form-check-label" for="remember-me">Remember me</label>
                 <a href="#" class="float-end text-secondary">Forgot Password?</a>
               </div>
@@ -77,16 +160,14 @@
                 </svg>
                 Continue with Google
               </button>
-
-
             </form>
           </div>
           <div class="text-center mb-4">
             Don't have an account? <a href="/auth/register" class="fw-bold text-secondary">Create Now</a>
           </div>
+        </div>
       </div>
     </div>
-  </div>
   </div>
 </body>
 

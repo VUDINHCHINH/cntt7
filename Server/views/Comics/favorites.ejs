@@ -1,0 +1,14 @@
+<h1>Danh Sách Yêu Thích</h1>
+<ul>
+    <% if (favorites.length > 0) { %>
+        <% favorites.forEach(favorite => { %>
+            <li>
+                <a href="/comics/detailcomics/<%= favorite.slug %>">
+                    <%= favorite.title %> 
+                </a>
+            </li>
+        <% }) %>
+    <% } else { %>
+        <p>Không có truyện nào trong danh sách yêu thích.</p>
+    <% } %>
+</ul>

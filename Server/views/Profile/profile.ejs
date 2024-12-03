@@ -10,22 +10,35 @@
   <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"
     integrity="sha384-C6RzsynM9kWDrMNeT87bh95OGNyZPhcTNXj1NW7RuBCsyN/o0jlpcV8Qyq46cDfL"
     crossorigin="anonymous"></script>
+  <style>
+    .card:hover {
+      transform: scale(1.05);
+      transition: transform 0.3s ease-in-out;
+    }
+    .card-img-top {
+      max-height: 250px;
+      object-fit: cover;
+    }
+  </style>
 </head>
 <body>
-  <%- include('../../inc/top.ejs')%>  
+  <%- include('../../inc/top.ejs') %>  
+
   <div class="container mt-5">
-    <h2>Danh sách tài sản của người dùng</h2>
+    <h2 class="text-center mb-4">Danh sách tài sản của người dùng</h2>
+
     <% if (msg) { %>
       <div class="alert alert-info"><%= msg %></div>
     <% } %>
+
     <% if (userItems.length > 0) { %>
       <div class="row">
         <% userItems.forEach(item => { %>
           <div class="col-md-4 mb-4">
-            <div class="card">
+            <div class="card shadow-sm border-light">
               <img src="<%= (item.item.imageUrl && item.item.imageUrl.trim() !== '') ? item.item.imageUrl : 'https://img.freepik.com/free-vector/hand-drawn-no-data-illustration_23-2150544961.jpg?t=st=1722434611~exp=1722438211~hmac=ae5c899ced05c3cf160428ebf8b5fe0f9ba7f1917926c1eecff690eaa7b8a41b&w=740' %>" 
-                   class="card-img-top" 
-                   alt="<%= item.item.name %>" style="max-height: 320px;">
+                   class="card-img-top img-fluid" 
+                   alt="<%= item.item.name %>">
               <div class="card-body">
                 <h5 class="card-title"><%= item.item.name %></h5>
                 <p class="card-text"><%= item.item.description %></p>
