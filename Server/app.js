@@ -1,3 +1,4 @@
+
 var createError = require('http-errors');
 var express = require('express');
 var path = require('path');
@@ -43,16 +44,15 @@ app.use(session({
 }))
 
 
-
 app.use('/index', indexRouter);
 app.use('/users', usersRouter);
-
 
 app.use('/wallet', walletRouter);
 app.use('/comics', comicRouter);
 app.use('/nft', nftRoutes);
 app.use('/admin', adminRoutes);
-app.use("/auth", AuthRounter);
+app.use('/auth', AuthRounter);
+app.use('/', comicRouter);
 
 
 websocketServices;
@@ -88,7 +88,6 @@ else {
 });
 
 module.exports = app;
-
 const PORT = process.env.PORT || 3001; 
 app.listen(PORT, () => {
     console.log(`Server is running on http://localhost:${PORT}`);
